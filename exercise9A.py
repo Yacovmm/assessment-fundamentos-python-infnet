@@ -5,12 +5,14 @@ request = requests.get(url)
   # Testando se a conexão funcionou
 if request.status_code != 200:
       request.raise_for_status()
+
 request.encoding = 'utf-8' # Mudar o enconding (acentuação)
 html = request.text
-print(html)
+# print(html)
 soup = BeautifulSoup(html, "lxml")
-print(soup)
+# print(soup)
 #Tabela
 for div_estados in soup.find_all('div', class_='tabela'):
-    d = {}
-    #busca linhas da tabela
+    d = div_estados.text
+
+print(d)
