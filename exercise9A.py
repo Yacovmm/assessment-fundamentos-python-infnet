@@ -12,7 +12,7 @@ html = request.text
 soup = BeautifulSoup(html, "lxml")
 # print(soup)
 #Tabela
-for div_estados in soup.find_all('div', class_='tabela'):
-    d = div_estados.text
+for estados in soup.find_all('div', class_='tabela'):
+    d = estados.text
 
 print(d)
